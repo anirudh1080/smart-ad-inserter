@@ -44,7 +44,7 @@ def process_single_video(video_url, ad_url, qr_url):
 
     if mapping:
         # Render using remotion
-        render_video(video_url, ad_url, qr_url, "./")
+        render_video(video_url, ad_url, qr_url, "../static/")
 
 if __name__ == "__main__":
     asyncio.run(main())

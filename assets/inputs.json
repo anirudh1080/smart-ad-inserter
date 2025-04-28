@@ -1,0 +1,12 @@
+[
+    {
+      "advertisement": "https://cdn.example.com/ads/ad1.gif",
+      "qr_cdn": "https://cdn.example.com/qr/qr1.png",
+      "video_url": "https://cdn.example.com/videos/vid1.mp4"
+    },
+    {
+      "advertisement": "https://cdn.example.com/ads/ad2.gif",
+      "qr_cdn": "https://cdn.example.com/qr/qr2.png",
+      "video_url": "https://cdn.example.com/videos/vid2.mp4"
+    }
+  ]

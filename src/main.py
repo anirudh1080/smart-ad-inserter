@@ -1,7 +1,7 @@
 import json
 import asyncio
 from src.video_mapper import generate_video_description, generate_ad_description, map_video_to_ad
-from src.remotion_render import render_video_with_ad
+from src.remotion_render import render_video
 from src.scheduler import play_scheduled_videos
 from redis import Redis
 from rq import Queue
@@ -44,7 +44,7 @@ def process_single_video(video_url, ad_url, qr_url):
 
     if mapping:
         # Render using remotion
-        render_video_with_ad(video_url, ad_url, qr_url)
+        render_video(video_url, ad_url, qr_url, "./")
 
 if __name__ == "__main__":
     asyncio.run(main())

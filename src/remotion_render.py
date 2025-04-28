@@ -1,11 +1,12 @@
 import subprocess
 
-def render_video_with_ad(video_url, ad_url, qr_url):
-    # Pass params to remotion
-    cmd = [
-        "npx", "remotion", "render",
-        "OverlayVideo",
-        "--props", f'{{"videoSrc": "{video_url}", "adGifSrc": "{ad_url}", "qrCodeSrc": "{qr_url}"}}',
-        "--output", f"outputs/{video_url.split('/')[-1].replace('.mp4', '_final.mp4')}"
-    ]
-    subprocess.run(cmd, check=True)
+def render_video(video_url, ad_url, qr_url, output_path):
+    # Construct the bash command
+    cmd = f"bash scripts/remotion_render.sh '{video_url}' '{ad_url}' '{qr_url}' '{output_path}'"
+    
+    try:
+        # Run the command
+        subprocess.run(cmd, shell=True, check=True)
+        print(f"Video rendered successfully at {output_path}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred: {e}")

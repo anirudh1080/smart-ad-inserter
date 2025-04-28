@@ -1,0 +1,23 @@
+{
+    "name": "remotion-video-overlay",
+    "version": "1.0.0",
+    "main": "index.tsx",
+    "dependencies": {
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "remotion": "^3.0.0",
+      "fastapi": "^0.70.0",
+      "redis": "^4.0.0",
+      "sidekiq": "^6.2.1"
+    },
+    "devDependencies": {
+      "typescript": "^4.4.3",
+      "ts-loader": "^9.2.0"
+    },
+    "scripts": {
+      "start": "webpack serve",
+      "build": "webpack",
+      "render": "remotion render OverlayVideo --props '{\"videoSrc\": \"${videoUrl}\", \"adGifSrc\": \"${adUrl}\", \"qrCodeSrc\": \"${qrUrl}\"}' --output \"outputs/final_video.mp4\""
+    }
+  }
+  
